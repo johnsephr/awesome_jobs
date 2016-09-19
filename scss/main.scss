@@ -1,0 +1,311 @@
+    // - - - - - - - mixins - - - - - - - //
+    @mixin centerer($position:absolute) {
+        position: $position;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    @mixin v-center($position:relative) {
+        position: $position;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    @mixin h-center($position:relative) {
+        position: $position;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    @mixin bottom($position:relative) {
+        position: $position;
+        top: 100%;
+        transform: translateY(-105%);
+    }
+
+    @mixin inline($float:left) {
+        display: inline-block;
+        float: $float;
+        position: relative;
+    }
+
+    // - - - - - - - variables - - - - - - - //
+    $main: #34314c;
+    $secondary: #9592ad;
+    $border: #d9dee9;
+    $white: #ffffff;
+    $highlight_1: #fd7473; // Red
+    $highlight_2: #fec951; // Yellow
+    $highlight_3: #47b8e0; // Blue
+    $highlight_4: #9f68d0; // Purple
+    // - - - - - - - global styles - - - - - - - //
+    body {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .wrapper {
+        width: 750px;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .clearfix:before,
+    .clearfix:after {
+        content: " ";
+        display: table;
+    }
+
+    .clearfix:after {
+        clear: both;
+    }
+
+    // - - - - - - - Specific styles - - - - - - - //
+    .border {
+        height: 6px;
+        border: 0;
+        background-color: $highlight_1;
+        background-image: linear-gradient(to right, $highlight_1, $highlight_1 25%, $highlight_2 25%, $highlight_2 50%, $highlight_3 50%, $highlight_3 75%, $highlight_4 75%, $highlight_4 100%, $highlight_4 100%);
+        -webkit-background-size: 50%, 100%;
+        -moz-background-size: 50%, 100%;
+        background-size: 50%, 100%;
+    }
+
+    .log_in {
+        top: -100;
+        right: 0;
+        position: absolute;
+        text-decoration: none;
+        color: $secondary;
+        background-color: $white;
+        border: none;
+        width: 7em;
+        height: 3em;
+        font-size: 1.35em;
+        margin: 0 0 4em 0;
+        text-align: right;
+    }
+
+    .log_in:hover {
+        color: $main;
+    }
+
+    .main_header {
+        margin: 8em 0 2em 0;
+        @include h-center;
+        img {
+            width: 160px;
+            @include h-center;
+        }
+        .awesome {
+            font-family: 'Oleo Script', cursive;
+            margin-bottom: 1.25em;
+            text-align: center;
+            font-weight: 500;
+            font-size: 40px;
+            .jobs {
+                font-size: 40px;
+                font-weight: 200;
+                font-family: 'Source Sans Pro', sans-serif;
+            }
+        }
+    }
+
+    .search_bar {
+        height: 2.5em;
+        width: 24em;
+        text-align: center;
+        @include h-center;
+        border: 2px solid $border;
+        border-radius: 25px;
+        margin-top: 1em;
+    }
+
+    .search_bar:focus {
+        outline: none;
+    }
+
+    nav {
+        padding: 1em 0;
+        font-size: 1.2em;
+        text-align: center;
+        a {
+            text-decoration: none;
+            padding: 0 .75em;
+            color: $secondary;
+        }
+        a:hover {
+            @extend a;
+            color: $main;
+        }
+        .active {
+            color: $main;
+            font-weight: 700;
+        }
+    }
+
+    #timeline {
+        position: relative;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        text-decoration: none;
+         &:before {
+            content: " ";
+            width: 1px;
+            background: 1px $border;
+            height: 91%;
+            position: absolute;
+            top: 5em;
+            left: 3.5em;
+            z-index: 0;
+        }
+        .listing {
+            background-color: white;
+            z-index: 1;
+            margin: 5rem 0;
+            position: relative;
+            border: 2px solid $border;
+            border-radius: 10px;
+            height: 7em;
+            transition: all .1s ease-in-out;
+            &:hover {
+                cursor: pointer;
+                box-shadow: 0 2px 40px 0 rgba(0, 0, 0, 0.1);
+            }
+            .image_wrapper_twitter {
+                position: relative;
+                @include inline;
+                height: 70px;
+                width: 70px;
+                margin-left: 12px;
+                @include v-center;
+                border-radius: 4px;
+                background-image: url(../images/twitter.jpg);
+                background-position: center center;
+                background-size: 100% 100%;
+            }
+            .image_wrapper_dribble {
+                @extend .image_wrapper_twitter;
+                background-image: url(../images/dribbble.jpg);
+            }
+            .image_wrapper_sound_cloud {
+                @extend .image_wrapper_twitter;
+                background-image: url(../images/soundcloud.jpg);
+            }
+            .image_wrapper_medium {
+                @extend .image_wrapper_twitter;
+                background-image: url(../images/medium.jpg);
+            }
+            .image_wrapper_product_hunt {
+                @extend .image_wrapper_twitter;
+                background-image: url(../images/product_hunt.jpg);
+            }
+            .image_wrapper_kickstarter {
+                @extend .image_wrapper_twitter;
+                background-image: url(../images/kickstarter.jpg);
+            }
+            .image_wrapper_survey_monkey {
+                @extend .image_wrapper_twitter;
+                background-image: url(../images/survey_monkey.jpg);
+            }
+        }
+        .info {
+            @include inline;
+            @include v-center;
+            margin-left: 1.5em;
+            h2 {
+                letter-spacing: 0.03em;
+                font-size: 1.75em;
+                font-weight: 700;
+                color: $main;
+                margin: 0;
+                padding-bottom: 5px;
+            }
+            p {
+                font-weight: .9em;
+                color: $secondary;
+                margin: 0;
+                span {
+                    margin: 0 1em;
+                }
+            }
+        }
+        .bullet {
+            font-size: 2em;
+        }
+        .job_type,
+        .full_time {
+            color: $highlight_1;
+            text-transform: uppercase;
+            font-weight: 700;
+            @include v-center(absolute);
+            right: 1em;
+        }
+        .full_time:before {
+            content: " ";
+            background: #fd7473;
+            width: .75em;
+            height: .75em;
+            border-radius: 100%;
+            position: absolute;
+            left: -31%;
+            top: 23%;
+        }
+        .contract:before {
+            @extend .full_time:before;
+            background-color: $highlight_4;
+        }
+        .freelance:before {
+            @extend .full_time:before;
+            background-color: $highlight_2;
+        }
+        .part_time:before {
+            @extend .full_time:before;
+            background-color: $highlight_3;
+        }
+        .contract {
+            @extend .job_type;
+            color: $highlight_4;
+        }
+        .freelance {
+            @extend .job_type;
+            color: $highlight_2;
+        }
+        .part_time {
+            color: $highlight_3;
+        }
+        .date_marker {
+            background-color: white;
+            color: #9592ad;
+            height: 2.5em;
+            width: 5.5em;
+            border-radius: 30px;
+            font-size: 1.2em;
+            text-align: center;
+            border: 2px solid #d9dee9;
+            position: relative;
+            margin: 2rem 0;
+            p {
+                @include v-center;
+            }
+        }
+    }
+
+    .load_more {
+        text-decoration: none;
+        color: $highlight_4;
+        border-radius: 35px;
+        background-color: $white;
+        @include h-center;
+        border: none;
+        border: 2px solid $highlight_4;
+        width: 7em;
+        height: 3em;
+        font-size: 1.5em;
+        margin: 0 0 4em 0;
+    }
+
+    .load_more:focus {
+        outline: none;
+    }

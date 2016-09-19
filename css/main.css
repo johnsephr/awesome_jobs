@@ -1,0 +1,233 @@
+body {
+  font-family: 'Roboto', sans-serif; }
+
+.wrapper {
+  width: 750px;
+  max-width: 90%;
+  margin: 0 auto; }
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
+.border {
+  height: 6px;
+  border: 0;
+  background-color: #fd7473;
+  background-image: linear-gradient(to right, #fd7473, #fd7473 25%, #fec951 25%, #fec951 50%, #47b8e0 50%, #47b8e0 75%, #9f68d0 75%, #9f68d0 100%, #9f68d0 100%);
+  -webkit-background-size: 50%, 100%;
+  -moz-background-size: 50%, 100%;
+  background-size: 50%, 100%; }
+
+.log_in {
+  top: -100;
+  right: 0;
+  position: absolute;
+  text-decoration: none;
+  color: #9592ad;
+  background-color: #ffffff;
+  border: none;
+  width: 7em;
+  height: 3em;
+  font-size: 1.35em;
+  margin: 0 0 4em 0;
+  text-align: right; }
+
+.log_in:hover {
+  color: #34314c; }
+
+.main_header {
+  margin: 8em 0 2em 0;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%); }
+  .main_header img {
+    width: 160px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%); }
+  .main_header .awesome {
+    font-family: 'Oleo Script', cursive;
+    margin-bottom: 1.25em;
+    text-align: center;
+    font-weight: 500;
+    font-size: 40px; }
+    .main_header .awesome .jobs {
+      font-size: 40px;
+      font-weight: 200;
+      font-family: 'Source Sans Pro', sans-serif; }
+
+.search_bar {
+  height: 2.5em;
+  width: 24em;
+  text-align: center;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 2px solid #d9dee9;
+  border-radius: 25px;
+  margin-top: 1em; }
+
+.search_bar:focus {
+  outline: none; }
+
+nav {
+  padding: 1em 0;
+  font-size: 1.2em;
+  text-align: center; }
+  nav a, nav a:hover {
+    text-decoration: none;
+    padding: 0 .75em;
+    color: #9592ad; }
+  nav a:hover {
+    color: #34314c; }
+  nav .active {
+    color: #34314c;
+    font-weight: 700; }
+
+#timeline {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none; }
+  #timeline:before {
+    content: " ";
+    width: 1px;
+    background: 1px #d9dee9;
+    height: 91%;
+    position: absolute;
+    top: 5em;
+    left: 3.5em;
+    z-index: 0; }
+  #timeline .listing {
+    background-color: white;
+    z-index: 1;
+    margin: 5rem 0;
+    position: relative;
+    border: 2px solid #d9dee9;
+    border-radius: 10px;
+    height: 7em;
+    transition: all .1s ease-in-out; }
+    #timeline .listing:hover {
+      cursor: pointer;
+      box-shadow: 0 2px 40px 0 rgba(0, 0, 0, 0.1); }
+    #timeline .listing .image_wrapper_twitter, #timeline .listing .image_wrapper_dribble, #timeline .listing .image_wrapper_sound_cloud, #timeline .listing .image_wrapper_medium, #timeline .listing .image_wrapper_product_hunt, #timeline .listing .image_wrapper_kickstarter, #timeline .listing .image_wrapper_survey_monkey {
+      position: relative;
+      display: inline-block;
+      float: left;
+      position: relative;
+      height: 70px;
+      width: 70px;
+      margin-left: 12px;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 4px;
+      background-image: url(../images/twitter.jpg);
+      background-position: center center;
+      background-size: 100% 100%; }
+    #timeline .listing .image_wrapper_dribble {
+      background-image: url(../images/dribbble.jpg); }
+    #timeline .listing .image_wrapper_sound_cloud {
+      background-image: url(../images/soundcloud.jpg); }
+    #timeline .listing .image_wrapper_medium {
+      background-image: url(../images/medium.jpg); }
+    #timeline .listing .image_wrapper_product_hunt {
+      background-image: url(../images/product_hunt.jpg); }
+    #timeline .listing .image_wrapper_kickstarter {
+      background-image: url(../images/kickstarter.jpg); }
+    #timeline .listing .image_wrapper_survey_monkey {
+      background-image: url(../images/survey_monkey.jpg); }
+  #timeline .info {
+    display: inline-block;
+    float: left;
+    position: relative;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 1.5em; }
+    #timeline .info h2 {
+      letter-spacing: 0.03em;
+      font-size: 1.75em;
+      font-weight: 700;
+      color: #34314c;
+      margin: 0;
+      padding-bottom: 5px; }
+    #timeline .info p {
+      font-weight: .9em;
+      color: #9592ad;
+      margin: 0; }
+      #timeline .info p span {
+        margin: 0 1em; }
+  #timeline .bullet {
+    font-size: 2em; }
+  #timeline .job_type, #timeline .contract, #timeline .freelance,
+  #timeline .full_time {
+    color: #fd7473;
+    text-transform: uppercase;
+    font-weight: 700;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1em; }
+  #timeline .full_time:before, #timeline .contract:before, #timeline .freelance:before, #timeline .part_time:before {
+    content: " ";
+    background: #fd7473;
+    width: .75em;
+    height: .75em;
+    border-radius: 100%;
+    position: absolute;
+    left: -31%;
+    top: 23%; }
+  #timeline .contract:before {
+    background-color: #9f68d0; }
+  #timeline .freelance:before {
+    background-color: #fec951; }
+  #timeline .part_time:before {
+    background-color: #47b8e0; }
+  #timeline .contract {
+    color: #9f68d0; }
+  #timeline .freelance {
+    color: #fec951; }
+  #timeline .part_time {
+    color: #47b8e0; }
+  #timeline .date_marker {
+    background-color: white;
+    color: #9592ad;
+    height: 2.5em;
+    width: 5.5em;
+    border-radius: 30px;
+    font-size: 1.2em;
+    text-align: center;
+    border: 2px solid #d9dee9;
+    position: relative;
+    margin: 2rem 0; }
+    #timeline .date_marker p {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%); }
+
+.load_more {
+  text-decoration: none;
+  color: #9f68d0;
+  border-radius: 35px;
+  background-color: #ffffff;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  border: none;
+  border: 2px solid #9f68d0;
+  width: 7em;
+  height: 3em;
+  font-size: 1.5em;
+  margin: 0 0 4em 0; }
+
+.load_more:focus {
+  outline: none; }
+
+/*# sourceMappingURL=main.css.map */
