@@ -45,8 +45,8 @@
     }
 
     .wrapper {
-        width: 750px;
-        max-width: 90%;
+        width: 90%;
+        max-width: 1000px;
         margin: 0 auto;
     }
 
@@ -71,58 +71,93 @@
         background-size: 50%, 100%;
     }
 
-    .log_in {
-        top: -100;
-        right: 0;
-        position: absolute;
-        text-decoration: none;
-        color: $secondary;
-        background-color: $white;
-        border: none;
-        width: 7em;
-        height: 3em;
-        font-size: 1.35em;
-        margin: 0 0 4em 0;
-        text-align: right;
-    }
-
-    .log_in:hover {
-        color: $main;
+    .login_wrapper {
+        z-index: 1;
+        width: 100%;
+        position: relative;
+        display: block;
+        @include inline;
+        margin-bottom: 10em;
+        a {
+            width: 50%;
+            text-decoration: none;
+            color: $secondary;
+            background-color: $white;
+            border: none;
+            width: 7em;
+            height: 3em;
+            font-size: 1.25em;
+            margin: 0 0 4em 0;
+            button {
+                background: transparent;
+                border: none;
+                color: grey;
+            }
+            .login {
+                float: right;
+            }
+            .newuser {
+                float: left;
+            }
+        }
+        button:hover {
+            color: darken($secondary, 35%);
+        }
     }
 
     .main_header {
-        margin: 8em 0 2em 0;
+        position: relative;
+        margin: 2em 0 2em 0;
         @include h-center;
-        img {
-            width: 160px;
-            @include h-center;
-        }
-        .awesome {
+        .buddy {
+            color: lighten($highlight_1, 10%);
             font-family: 'Oleo Script', cursive;
-            margin-bottom: 1.25em;
+            margin-bottom: .1em;
             text-align: center;
             font-weight: 500;
-            font-size: 40px;
-            .jobs {
-                font-size: 40px;
+            font-size: 10em;
+            padding-right: 5px;
+            .system {
+                color: lighten($highlight_3, 10%);
+                padding-left: 5px;
+                font-size: 1em;
                 font-weight: 200;
-                font-family: 'Source Sans Pro', sans-serif;
+                font-family: 'Oleo Script', cursive;
             }
+        }
+        .gotback {
+            text-align: center;
+            color: grey;
+            margin-bottom: 7em;
         }
     }
 
-    .search_bar {
-        height: 2.5em;
-        width: 24em;
+    .random {
+        height: 3.5em;
+        width: 16em;
         text-align: center;
         @include h-center;
-        border: 2px solid $border;
+        background: $highlight_4;
+        border: none;
+        color: $white;
         border-radius: 25px;
         margin-top: 1em;
     }
 
     .search_bar:focus {
         outline: none;
+    }
+
+    .nav_wrapper {
+        border: 1px solid lightgrey;
+        background: lighten($highlight_4, 30%);
+        border-radius: 10px;
+    }
+
+    .nav_label {
+        color: lighten($highlight_4, 10%);
+        font-size: 2em;
+        text-align: center;
     }
 
     nav {
@@ -136,10 +171,10 @@
         }
         a:hover {
             @extend a;
-            color: $main;
+            color: darken($secondary, 35%);
         }
         .active {
-            color: $main;
+            color: darken($secondary, 35%);
             font-weight: 700;
         }
     }
@@ -150,7 +185,7 @@
         margin: 0;
         list-style: none;
         text-decoration: none;
-         &:before {
+        &:before {
             content: " ";
             width: 1px;
             background: 1px $border;
@@ -173,7 +208,7 @@
                 cursor: pointer;
                 box-shadow: 0 2px 40px 0 rgba(0, 0, 0, 0.1);
             }
-            .image_wrapper_twitter {
+            .image_wrapper_emily {
                 position: relative;
                 @include inline;
                 height: 70px;
@@ -181,33 +216,45 @@
                 margin-left: 12px;
                 @include v-center;
                 border-radius: 4px;
-                background-image: url(../images/twitter.jpg);
+                background-image: url(../images/elisabeth.png);
                 background-position: center center;
                 background-size: 100% 100%;
             }
-            .image_wrapper_dribble {
-                @extend .image_wrapper_twitter;
-                background-image: url(../images/dribbble.jpg);
+            .image_wrapper_jake {
+                @extend .image_wrapper_emily;
+                background-image: url(../images/josiah.png);
             }
-            .image_wrapper_sound_cloud {
-                @extend .image_wrapper_twitter;
-                background-image: url(../images/soundcloud.jpg);
+            .image_wrapper_sierra {
+                @extend .image_wrapper_emily;
+                background-image: url(../images/ashlyn.png);
             }
-            .image_wrapper_medium {
-                @extend .image_wrapper_twitter;
-                background-image: url(../images/medium.jpg);
+            .image_wrapper_megan {
+                @extend .image_wrapper_emily;
+                background-image: url(../images/maisie.png);
             }
-            .image_wrapper_product_hunt {
-                @extend .image_wrapper_twitter;
-                background-image: url(../images/product_hunt.jpg);
+            .image_wrapper_dave {
+                @extend .image_wrapper_emily;
+                background-image: url(../images/casey.png);
             }
-            .image_wrapper_kickstarter {
-                @extend .image_wrapper_twitter;
-                background-image: url(../images/kickstarter.jpg);
+            .image_wrapper_rebecca {
+                @extend .image_wrapper_emily;
+                background-image: url(../images/hannah.png);
             }
-            .image_wrapper_survey_monkey {
-                @extend .image_wrapper_twitter;
-                background-image: url(../images/survey_monkey.jpg);
+            .image_wrapper_ryan {
+                @extend .image_wrapper_emily;
+                background-image: url(../images/stone.png);
+            }
+            .image_wrapper_amy {
+                @extend .image_wrapper_emily;
+                background-image: url(../images/amy.png);
+            }
+            .image_wrapper_jen {
+                @extend .image_wrapper_emily;
+                background-image: url(../images/hellison.png);
+            }
+            .image_wrapper_adam {
+                @extend .image_wrapper_emily;
+                background-image: url(../images/evan.png);
             }
         }
         .info {
@@ -292,20 +339,32 @@
         }
     }
 
-    .load_more {
+.load_more {
         text-decoration: none;
         color: $highlight_4;
         border-radius: 35px;
         background-color: $white;
         @include h-center;
         border: none;
-        border: 2px solid $highlight_4;
+        border: 2px solid lighten($highlight_4, 5%);
         width: 7em;
         height: 3em;
         font-size: 1.5em;
         margin: 0 0 4em 0;
     }
-
+.load_more:hover {
+    color: darken($highlight_4, 10%);
+    border: 2px solid darken($highlight_4, 5%);
+}
     .load_more:focus {
         outline: none;
     }
+
+
+@media only screen and (max-width: 838px) {
+    .logo {
+        h1, span {
+            font-size: .5em;
+        }
+    }
+}

@@ -2,8 +2,8 @@ body {
   font-family: 'Roboto', sans-serif; }
 
 .wrapper {
-  width: 750px;
-  max-width: 90%;
+  width: 90%;
+  max-width: 1000px;
   margin: 0 auto; }
 
 .clearfix:before,
@@ -23,57 +23,86 @@ body {
   -moz-background-size: 50%, 100%;
   background-size: 50%, 100%; }
 
-.log_in {
-  top: -100;
-  right: 0;
-  position: absolute;
-  text-decoration: none;
-  color: #9592ad;
-  background-color: #ffffff;
-  border: none;
-  width: 7em;
-  height: 3em;
-  font-size: 1.35em;
-  margin: 0 0 4em 0;
-  text-align: right; }
-
-.log_in:hover {
-  color: #34314c; }
+.login_wrapper {
+  z-index: 1;
+  width: 100%;
+  position: relative;
+  display: block;
+  display: inline-block;
+  float: left;
+  position: relative;
+  margin-bottom: 10em; }
+  .login_wrapper a, .login_wrapper nav a:hover, nav .login_wrapper a:hover {
+    width: 50%;
+    text-decoration: none;
+    color: #9592ad;
+    background-color: #ffffff;
+    border: none;
+    width: 7em;
+    height: 3em;
+    font-size: 1.25em;
+    margin: 0 0 4em 0; }
+    .login_wrapper a button {
+      background: transparent;
+      border: none;
+      color: grey; }
+    .login_wrapper a .login {
+      float: right; }
+    .login_wrapper a .newuser {
+      float: left; }
+  .login_wrapper button:hover {
+    color: #3f3c50; }
 
 .main_header {
-  margin: 8em 0 2em 0;
+  position: relative;
+  margin: 2em 0 2em 0;
   position: relative;
   left: 50%;
   transform: translateX(-50%); }
-  .main_header img {
-    width: 160px;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%); }
-  .main_header .awesome {
+  .main_header .buddy {
+    color: #fea6a5;
     font-family: 'Oleo Script', cursive;
-    margin-bottom: 1.25em;
+    margin-bottom: .1em;
     text-align: center;
     font-weight: 500;
-    font-size: 40px; }
-    .main_header .awesome .jobs {
-      font-size: 40px;
+    font-size: 10em;
+    padding-right: 5px; }
+    .main_header .buddy .system {
+      color: #73c9e7;
+      padding-left: 5px;
+      font-size: 1em;
       font-weight: 200;
-      font-family: 'Source Sans Pro', sans-serif; }
+      font-family: 'Oleo Script', cursive; }
+  .main_header .gotback {
+    text-align: center;
+    color: grey;
+    margin-bottom: 7em; }
 
-.search_bar {
-  height: 2.5em;
-  width: 24em;
+.random {
+  height: 3.5em;
+  width: 16em;
   text-align: center;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  border: 2px solid #d9dee9;
+  background: #9f68d0;
+  border: none;
+  color: #ffffff;
   border-radius: 25px;
   margin-top: 1em; }
 
 .search_bar:focus {
   outline: none; }
+
+.nav_wrapper {
+  border: 1px solid lightgrey;
+  background: #e9ddf4;
+  border-radius: 10px; }
+
+.nav_label {
+  color: #b88fdc;
+  font-size: 2em;
+  text-align: center; }
 
 nav {
   padding: 1em 0;
@@ -84,9 +113,9 @@ nav {
     padding: 0 .75em;
     color: #9592ad; }
   nav a:hover {
-    color: #34314c; }
+    color: #3f3c50; }
   nav .active {
-    color: #34314c;
+    color: #3f3c50;
     font-weight: 700; }
 
 #timeline {
@@ -116,7 +145,7 @@ nav {
     #timeline .listing:hover {
       cursor: pointer;
       box-shadow: 0 2px 40px 0 rgba(0, 0, 0, 0.1); }
-    #timeline .listing .image_wrapper_twitter, #timeline .listing .image_wrapper_dribble, #timeline .listing .image_wrapper_sound_cloud, #timeline .listing .image_wrapper_medium, #timeline .listing .image_wrapper_product_hunt, #timeline .listing .image_wrapper_kickstarter, #timeline .listing .image_wrapper_survey_monkey {
+    #timeline .listing .image_wrapper_emily, #timeline .listing .image_wrapper_jake, #timeline .listing .image_wrapper_sierra, #timeline .listing .image_wrapper_megan, #timeline .listing .image_wrapper_dave, #timeline .listing .image_wrapper_rebecca, #timeline .listing .image_wrapper_ryan, #timeline .listing .image_wrapper_amy, #timeline .listing .image_wrapper_jen, #timeline .listing .image_wrapper_adam {
       position: relative;
       display: inline-block;
       float: left;
@@ -128,21 +157,27 @@ nav {
       top: 50%;
       transform: translateY(-50%);
       border-radius: 4px;
-      background-image: url(../images/twitter.jpg);
+      background-image: url(../images/elisabeth.png);
       background-position: center center;
       background-size: 100% 100%; }
-    #timeline .listing .image_wrapper_dribble {
-      background-image: url(../images/dribbble.jpg); }
-    #timeline .listing .image_wrapper_sound_cloud {
-      background-image: url(../images/soundcloud.jpg); }
-    #timeline .listing .image_wrapper_medium {
-      background-image: url(../images/medium.jpg); }
-    #timeline .listing .image_wrapper_product_hunt {
-      background-image: url(../images/product_hunt.jpg); }
-    #timeline .listing .image_wrapper_kickstarter {
-      background-image: url(../images/kickstarter.jpg); }
-    #timeline .listing .image_wrapper_survey_monkey {
-      background-image: url(../images/survey_monkey.jpg); }
+    #timeline .listing .image_wrapper_jake {
+      background-image: url(../images/josiah.png); }
+    #timeline .listing .image_wrapper_sierra {
+      background-image: url(../images/ashlyn.png); }
+    #timeline .listing .image_wrapper_megan {
+      background-image: url(../images/maisie.png); }
+    #timeline .listing .image_wrapper_dave {
+      background-image: url(../images/casey.png); }
+    #timeline .listing .image_wrapper_rebecca {
+      background-image: url(../images/hannah.png); }
+    #timeline .listing .image_wrapper_ryan {
+      background-image: url(../images/stone.png); }
+    #timeline .listing .image_wrapper_amy {
+      background-image: url(../images/amy.png); }
+    #timeline .listing .image_wrapper_jen {
+      background-image: url(../images/hellison.png); }
+    #timeline .listing .image_wrapper_adam {
+      background-image: url(../images/evan.png); }
   #timeline .info {
     display: inline-block;
     float: left;
@@ -221,13 +256,21 @@ nav {
   left: 50%;
   transform: translateX(-50%);
   border: none;
-  border: 2px solid #9f68d0;
+  border: 2px solid #ab7bd6;
   width: 7em;
   height: 3em;
   font-size: 1.5em;
   margin: 0 0 4em 0; }
 
+.load_more:hover {
+  color: #8641c4;
+  border: 2px solid #9355ca; }
+
 .load_more:focus {
   outline: none; }
+
+@media only screen and (max-width: 838px) {
+  .logo h1, .logo span {
+    font-size: .5em; } }
 
 /*# sourceMappingURL=main.css.map */
